@@ -21,10 +21,8 @@ mod_importObservations_server <- function(id, r){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
     r$obs_data <- lymantria_obs_cdd
-
-    # output$print <- renderPrint({
-    #   head(r$obs_data)
-    # })
+    # technically this lymantria data object is visible to all functions, since it's internal data
+    # however, doing things this way means this could be a call to a DB later
 
   })
 }
