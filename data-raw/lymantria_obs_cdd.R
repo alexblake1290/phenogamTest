@@ -22,7 +22,12 @@ ld_dat2 <- ld_dat %>%
 lymantria_obs_cdd <- ld_dat2 %>%
   add_siteyear_cdd()
 
-usethis::use_data(lymantria_obs_cdd, overwrite = TRUE, internal = T)
+
+load("R/sysdata.rda")
+
+lymantria_obs_cdd
+
+usethis::use_data(lymantria_obs_cdd, overwrite = TRUE, internal = F)
 
 
 

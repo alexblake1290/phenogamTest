@@ -11,8 +11,6 @@
 1. Numeric entry of year
 2. Map to click to select location
 
-## Build basic modules
+## TODO
 
-1. Module to load observation data from .rds file
-2. Module to pull Daymet data for year + location and join to observation data
-3. Module to generate plot
+- clean up dependencies
