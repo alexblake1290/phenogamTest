@@ -23,9 +23,9 @@ mod_importObservations_server <- function(id, r){
     load("data/lymantria_obs_cdd.rda")
     r$obs_data <- lymantria_obs_cdd
 
-    output$print <- renderPrint({
-      head(r$obs_data)
-    })
+    # output$print <- renderPrint({
+    #   head(r$obs_data)
+    # })
 
   })
 }
