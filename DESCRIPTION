@@ -1,13 +1,31 @@
 Package: phenogamShiny
 Title: PhenoGAM Shiny
 Version: 0.0.0.9000
-Authors@R: person('Michael', 'Culshaw-Maurer', email = 'michaelcm8@gmail.com', role = c('cre', 'aut'))
+Authors@R: 
+    person("Michael", "Culshaw-Maurer", , "michaelcm8@gmail.com", role = c("cre", "aut"))
 Description: A shiny app for fitting phenological models to locations.
 License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
 Imports: 
     config (>= 0.3.1),
+    daymetr,
+    dplyr,
+    ggplot2,
+    ggtext,
     golem (>= 0.3.2),
-    shiny (>= 1.7.1)
+    httr,
+    lubridate,
+    magrittr,
+    purrr,
+    rinat,
+    shiny (>= 1.7.1),
+    tidyr
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
+Language: en-US
 LazyData: true
 RoxygenNote: 7.1.1
