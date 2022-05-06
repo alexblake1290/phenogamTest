@@ -20,7 +20,7 @@ mod_importObservations_ui <- function(id){
 mod_importObservations_server <- function(id, r){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-    load("R/sysdata.rda")
+    load("data/lymantria_obs_cdd.rda")
     r$obs_data <- lymantria_obs_cdd
 
     output$print <- renderPrint({
