@@ -39,10 +39,10 @@ mod_generateSiteYearCurveMapInput_server <- function(id, r){
         addCircles(-73.5298385, 41.4989663, radius=100, color="blue",
                    group = "starting_point", label = "Great Hollow",
                    labelOptions = labelOptions(noHide = T)) %>%
-        setMaxBounds( lng1 = -73.729425
-                      , lat1 = 40.948737
-                      , lng2 = -71.786356
-                      , lat2 = 42.023824 )
+        setMaxBounds( lng1 = -73.816265
+                      , lat1 = 40.944817
+                      , lng2 = -71.737432
+                      , lat2 = 42.104837 )
     })
 
     observe({
