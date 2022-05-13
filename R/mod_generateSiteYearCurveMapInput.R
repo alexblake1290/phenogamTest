@@ -36,9 +36,8 @@ mod_generateSiteYearCurveMapInput_server <- function(id, r){
       leaflet(options = leafletOptions(minZoom = 9)) %>%
         setView(lat = 41.3840395, lng = -72.9168159, zoom = 9) %>%
         addTiles() %>%
-        addCircles(-73.5298385, 41.4989663, radius=100, color="blue",
-                   group = "starting_point", label = "Great Hollow",
-                   labelOptions = labelOptions(noHide = T)) %>%
+        addMarkers(-73.5298385, 41.4989663,
+                   group = "starting_point", label = "Great Hollow") %>%
         setMaxBounds( lng1 = -73.816265
                       , lat1 = 40.944817
                       , lng2 = -71.737432
@@ -48,9 +47,8 @@ mod_generateSiteYearCurveMapInput_server <- function(id, r){
     observe({
       click = input$map_click
       leafletProxy(ns("map"), session = session) %>%
-        #clearGroup("starting_point") %>%
         clearGroup("click_point") %>%
-        addCircles(click$lng, click$lat, radius=100, color="red", group = "click_point")
+        addMarkers(click$lng, click$lat, label = "Clicked Point", group = "click_point")
     }) %>%
       bindEvent(input$map_click)
 
