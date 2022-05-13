@@ -11,7 +11,7 @@ app_ui <- function(request) {
     # Your application UI logic
     fluidPage(
       h1("phenogamShiny"),
-      mod_generateSiteYearCurve_ui("generateSiteYearCurve_1"),
+      mod_generateSiteYearCurveMapInput_ui("generateSiteYearCurveMapInput_1"),
       mod_makePlot_ui("makePlot_1")
     )
   )

@@ -22,6 +22,7 @@ attachment::att_amend_desc()
 # golem::add_module(name = "importObservations", with_test = TRUE) # Name of the module
 # golem::add_module(name = "generateSiteYearCurve", with_test = TRUE) # Name of the module
 # golem::add_module(name = "makePlot", with_test = TRUE) # Name of the module
+golem::add_module(name = "generateSiteYearCurveMapInput", with_test = TRUE) # Name of the module
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
