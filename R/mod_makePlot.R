@@ -11,7 +11,7 @@
 mod_makePlot_ui <- function(id){
   ns <- NS(id)
   tagList(
-    plotOutput(ns("plot"))
+    plotOutput(ns("plot"), width = "60%")
 
   )
 }
