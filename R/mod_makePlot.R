@@ -46,8 +46,9 @@ mod_makePlot_server <- function(id, r){
     output$plot <- renderPlot({
 
         ggplot(r$site_match, aes(x = site_date_match)) +
-        geom_density(bw = "SJ-dpi") +
-        #geom_density(bw = "bcv") +
+        #geom_density(bw = "SJ-dpi") +
+        geom_density(bw = "bcv") +
+        #geom_histogram() +
         scale_x_date(date_breaks = "1 month", date_labels = "%b") +
         geom_vline(xintercept = r$today_year,
                    lty = 3, color = "#FF0000", size = 0.8) +

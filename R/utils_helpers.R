@@ -130,7 +130,7 @@ get_siteyear_cdd <- function(data, ub, lb){
 }
 
 get_site_cdd_curves <- function(sites, ub, lb){
-  sites %>%
+  s <- sites %>%
     get_siteyear_cdd(ub = ub, lb = lb) %>%
     left_join(sites %>% select(siteid, latitude, longitude),
               by = c("latitude", "longitude")) %>%
@@ -138,8 +138,20 @@ get_site_cdd_curves <- function(sites, ub, lb){
       paste(year, as.character(julian_day)), orders = "yj") %>%
         as_date()
     ) %>%
-    select(siteid, date, cdd) %>%
-    filter(cdd > 0)
+    select(siteid, date, cdd)
+
+  ss <- s %>%
+    filter(cdd > min(s$cdd, na.rm = T), cdd < max(s$cdd, na.rm = T))
+
+  s0 <- s %>%
+    filter(cdd == min(s$cdd, na.rm = T)) %>%
+    slice_max(date, n = 1)
+
+  sm <- s %>%
+    filter(cdd == max(s$cdd, na.rm = T)) %>%
+    slice_min(date, n = 1)
+
+  bind_rows(s0, ss, sm)
 }
 
 make_breaks <- function(site_curves, nbreaks){

@@ -19,10 +19,8 @@ add_siteyear_cdd <- function(data, ub = 120, lb = 50){
 match_cdd_obs_site <- function(obs_data, site_curve){
   obs_data %>%
     mutate(site_cdd_index = findInterval(cdd, site_curve[["cdd"]]),
-           site_cdd_match = ifelse(site_cdd_index == 0, 0,
-                                   site_curve[["cdd"]][site_cdd_index]),
-           site_date_match = ifelse(site_cdd_index == 0, min(site_curve[["date"]]) - days(1),
-                                    site_curve[["date"]][site_cdd_index]) %>%
+           site_cdd_match = site_curve[["cdd"]][site_cdd_index],
+           site_date_match = site_curve[["date"]][site_cdd_index] %>%
              as_date()) %>%
     select(-site_cdd_index)
 }
