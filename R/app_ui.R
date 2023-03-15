@@ -10,7 +10,6 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      h1("phenogamShiny"),
       p("Select a year and a site on the map to see estimated population densities for that location and year."),
       mod_generateSiteYearCurveMapInput_ui("generateSiteYearCurveMapInput_1"),
       br(),

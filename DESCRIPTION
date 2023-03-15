@@ -21,7 +21,9 @@ Imports:
     purrr,
     rinat,
     shiny (>= 1.7.1),
-    tidyr
+    tidyr,
+    showtext,
+    sysfonts
 Suggests: 
     spelling,
     testthat (>= 3.0.0)
