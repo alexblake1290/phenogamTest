@@ -23,7 +23,8 @@ Imports:
     shiny (>= 1.7.1),
     tidyr,
     showtext,
-    sysfonts
+    sysfonts,
+    shinyBS
 Suggests: 
     spelling,
     testthat (>= 3.0.0)

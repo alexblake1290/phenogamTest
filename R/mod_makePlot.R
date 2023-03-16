@@ -72,7 +72,8 @@ mod_makePlot_server <- function(id, r){
              title = paste("Estimated", year(r$today_year), "*Lymantria dispar* densities"),
              subtitle = paste("Data from iNaturalist and Daymet.<br><span style='color:#6eb39c;'>Teal line</span> is today's date in", year(r$today_year)))
 
-    })
+    },
+    execOnResize = TRUE)
 
   })
 }

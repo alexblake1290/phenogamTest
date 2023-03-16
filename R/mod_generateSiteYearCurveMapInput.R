@@ -39,7 +39,7 @@ mod_generateSiteYearCurveMapInput_server <- function(id, r){
         setMaxBounds( lng1 = -73.816265
                       , lat1 = 40.944817
                       , lng2 = -71.737432
-                      , lat2 = 42.104837 )
+                      , lat2 = 42.154837 )
     })
 
     observe({
