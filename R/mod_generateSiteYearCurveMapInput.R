@@ -16,7 +16,7 @@ mod_generateSiteYearCurveMapInput_ui <- function(id){
                                `2019` = 2019,
                                `2020` = 2020,
                                `2021` = 2021)),
-    leafletOutput(ns('map'), width = "95%")
+    leafletOutput(ns('map'), width = "100%")
   )
 }
 

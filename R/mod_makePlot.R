@@ -11,7 +11,7 @@
 mod_makePlot_ui <- function(id){
   ns <- NS(id)
   tagList(
-    plotOutput(ns("plot"), width = "95%")
+    plotOutput(ns("plot"), width = "100%")
 
   )
 }
@@ -48,7 +48,8 @@ mod_makePlot_server <- function(id, r){
             axis.text.y = element_blank(),
             axis.ticks.y = element_blank(),
             plot.title = element_markdown(family = "LexendDecaSemiBold",
-                                          size = base_font_size*1.4^2),
+                                          size = base_font_size*1.4^2,
+                                          hjust=1),
             legend.title = element_text(size = base_font_size*1.2,
                                         family = "RobotoCondensed"),
             plot.background = element_rect(fill="#1b2724", colour="#1b2724"),
@@ -69,8 +70,8 @@ mod_makePlot_server <- function(id, r){
         geom_vline(xintercept = r$today_year,
                    lty = 3, color = "#6eb39c", size = 0.8) +
         labs(x = "\nSite Date", y = "Estimated Observation Density",
-             title = paste("Estimated", year(r$today_year), "*Lymantria dispar* densities"),
-             subtitle = paste("Data from iNaturalist and Daymet.<br><span style='color:#6eb39c;'>Teal line</span> is today's date in", year(r$today_year)))
+             title = paste(year(r$today_year)),
+             subtitle = "")
 
     },
     execOnResize = TRUE)

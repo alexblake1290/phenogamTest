@@ -11,6 +11,15 @@ label{
   font-family:'Lexend Deca', sans-serif;
   color: #ffffff;
 }
+.panel-body{
+  background: #1b2724;
+  color: #ffffff;
+}
+.panel-heading{
+  color: #1b2724;
+  background: #ffffff;
+  border-color: #ffffff;
+}
 .selectize-input{
   font-family:'Roboto Condensed', sans-serif;
   color: #ffffff;

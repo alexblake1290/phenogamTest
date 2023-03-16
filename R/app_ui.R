@@ -2,7 +2,7 @@
 #'
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
-#' @import shiny
+#' @import shiny shinyBS
 #' @noRd
 app_ui <- function(request) {
   tagList(
@@ -10,10 +10,12 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      p("Select a year and a site on the map to see estimated population densities for that location and year."),
-      mod_generateSiteYearCurveMapInput_ui("generateSiteYearCurveMapInput_1"),
-      br(),
-      mod_makePlot_ui("makePlot_1")
+      #Added ShinyBS here for panels
+      bsCollapse(
+        id='testCollapse',open='Map',multiple=TRUE,
+        bsCollapsePanel('Map', "Select a year and a site on the map to see estimated population densities for that location and year.", mod_generateSiteYearCurveMapInput_ui("generateSiteYearCurveMapInput_1")),
+        bsCollapsePanel('Population Densities', "Teal line is todays date in 2023", mod_makePlot_ui("makePlot_1"))
+      )
     )
   )
 }
