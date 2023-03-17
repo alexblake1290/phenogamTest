@@ -41,7 +41,8 @@ mod_makePlot_server <- function(id, r){
             axis.title = element_text(size = base_font_size*1.1,
                                       family = "LexendDecaLight"),
             plot.subtitle = element_markdown(size = base_font_size*1.4,
-                                             family = "LexendDecaThin"),
+                                             family = "LexendDecaThin",
+                                             hjust=0.95),
             axis.text.x = element_text(family = "RobotoCondensed",
                                        colour = "#ffffff",
                                        size = base_font_size*0.9),
@@ -49,7 +50,7 @@ mod_makePlot_server <- function(id, r){
             axis.ticks.y = element_blank(),
             plot.title = element_markdown(family = "LexendDecaSemiBold",
                                           size = base_font_size*1.4^2,
-                                          hjust=1),
+                                          hjust=0.95),
             legend.title = element_text(size = base_font_size*1.2,
                                         family = "RobotoCondensed"),
             plot.background = element_rect(fill="#1b2724", colour="#1b2724"),
@@ -70,8 +71,8 @@ mod_makePlot_server <- function(id, r){
         geom_vline(xintercept = r$today_year,
                    lty = 3, color = "#6eb39c", size = 0.8) +
         labs(x = "\nSite Date", y = "Estimated Observation Density",
-             title = paste(year(r$today_year)),
-             subtitle = "")
+             title = "",
+             subtitle = paste(year(r$today_year)))
 
     },
     execOnResize = TRUE)
