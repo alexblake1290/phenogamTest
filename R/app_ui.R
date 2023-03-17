@@ -2,7 +2,7 @@
 #'
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
-#' @import shiny shinyBS
+#' @import shiny shinyBS shinyjs
 #' @noRd
 app_ui <- function(request) {
   tagList(
@@ -11,8 +11,9 @@ app_ui <- function(request) {
     # Your application UI logic
     fluidPage(
       #Added ShinyBS here for panels
+      useShinyjs(),
       bsCollapse(
-        id='testCollapse',open='Map',multiple=TRUE,
+        id='testCollapse',open=c('Map','Population Densities'),multiple=TRUE,
         bsCollapsePanel('Map', mod_generateSiteYearCurveMapInput_ui("generateSiteYearCurveMapInput_1")),
         bsCollapsePanel('Population Densities', mod_makePlot_ui("makePlot_1"))
       )

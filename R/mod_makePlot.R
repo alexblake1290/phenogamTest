@@ -25,14 +25,14 @@ mod_makePlot_server <- function(id, r){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
-    base_font_size <- 4
+    base_font_size <- 12
 
     sysfonts::font_add_google("Lexend Deca", "LexendDecaSemiBold", regular.wt = 600)
     sysfonts::font_add_google("Lexend Deca", "LexendDecaThin", regular.wt = 200)
     sysfonts::font_add_google("Lexend Deca", "LexendDecaLight", regular.wt = 400)
     sysfonts::font_add_google("Roboto Condensed", "RobotoCondensed")
     showtext::showtext_auto()
-    showtext::showtext_opts(dpi = 300)
+    showtext::showtext_opts(dpi = 96)
 
     mytheme <- theme_minimal() +
       theme(text = element_text(family = "RobotoCondensed",

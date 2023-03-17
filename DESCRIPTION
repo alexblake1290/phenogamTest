@@ -24,7 +24,8 @@ Imports:
     tidyr,
     showtext,
     sysfonts,
-    shinyBS
+    shinyBS,
+    shinyjs
 Suggests: 
     spelling,
     testthat (>= 3.0.0)

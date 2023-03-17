@@ -16,7 +16,7 @@ mod_generateSiteYearCurveMapInput_ui <- function(id){
                                `2019` = 2019,
                                `2020` = 2020,
                                `2021` = 2021)),
-    leafletOutput(ns('map'), width = "100%")
+    leafletOutput(ns('map'), width = "100%", height = "550")
   )
 }
 
@@ -31,7 +31,8 @@ mod_generateSiteYearCurveMapInput_server <- function(id, r){
     obs_data <- isolate(r$obs_data)
 
     output$map <- renderLeaflet({
-      leaflet(options = leafletOptions(minZoom = 9)) %>%
+      leaflet(options = leafletOptions(minZoom = 9,
+                                       attributionControl=FALSE)) %>%
         setView(lat = 41.3840395, lng = -72.9168159, zoom = 9) %>%
         addTiles() %>%
         setMaxBounds( lng1 = -73.816265

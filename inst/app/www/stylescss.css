@@ -60,3 +60,8 @@ label{
 .selectize-control.single .selectize-input.dropdown-active:after{
   border-color: #1b2724 transparent #1b2724 transparent;
 }
+.inactiveLink {
+}
+.inactiveLink:active {
+  pointer-events: none;
+}
