@@ -34,8 +34,6 @@ mod_generateSiteYearCurveMapInput_server <- function(id, r){
       leaflet(options = leafletOptions(minZoom = 9)) %>%
         setView(lat = 41.3840395, lng = -72.9168159, zoom = 9) %>%
         addTiles() %>%
-        addMarkers(-73.5298385, 41.4989663,
-                   group = "starting_point", label = "Great Hollow") %>%
         setMaxBounds( lng1 = -73.816265
                       , lat1 = 40.944817
                       , lng2 = -71.737432

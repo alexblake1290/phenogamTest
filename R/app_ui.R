@@ -13,8 +13,8 @@ app_ui <- function(request) {
       #Added ShinyBS here for panels
       bsCollapse(
         id='testCollapse',open='Map',multiple=TRUE,
-        bsCollapsePanel('Map', "Select a year and a site on the map to see estimated population densities for that location and year.", mod_generateSiteYearCurveMapInput_ui("generateSiteYearCurveMapInput_1")),
-        bsCollapsePanel('Population Densities', "Teal line is todays date in 2023", mod_makePlot_ui("makePlot_1"))
+        bsCollapsePanel('Map', mod_generateSiteYearCurveMapInput_ui("generateSiteYearCurveMapInput_1")),
+        bsCollapsePanel('Population Densities', mod_makePlot_ui("makePlot_1"))
       )
     )
   )
