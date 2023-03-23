@@ -113,6 +113,13 @@ This limitation can be overcome using javascript, but this isn't an option on st
 
 # Appendix
 
+## AWS free tier alerts
+See the [official documentation](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html).
+  
+By design, there are enough free compute hours per month (750) to maintain full uptime for one Linux server. Another 750 hrs per month is provided separately for one Windows server if we need it.
+  
+A budget template is set-up to budget $0.01 for the account (so instances pause at 100% usage), as explained [in the documentation](https://aws.amazon.com/getting-started/hands-on/control-your-costs-free-tier-budgets/).
+  
 ## Handy linux commands
 
 - Preface commands with `sudo` to execute with admin level permission.
